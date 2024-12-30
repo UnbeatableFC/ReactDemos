@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Components/index.css"
+import "../Styles/calculator.css";
 
 const Add = () => {
   const [inputValue, setInputValue] = useState("");
@@ -11,14 +11,17 @@ const Add = () => {
   const display = (value) => setInputValue(inputValue + value);
 
   const calculate = () => {
-    setInputValue(eval(inputValue))
-  }
+    setInputValue(eval(inputValue));
+  };
   return (
     <div>
       <form className="calculator" name="calc">
         <input type="text" className="value" value={inputValue} />
 
-        <span className="num clear" onClick={() => clear()}> c </span>
+        <span className="num clear" onClick={() => clear()}>
+          {" "}
+          c{" "}
+        </span>
 
         <span onClick={() => display("/")}>/</span>
         <span onClick={() => display("*")}>*</span>
@@ -29,7 +32,9 @@ const Add = () => {
         <span onClick={() => display("4")}>4</span>
         <span onClick={() => display("5")}>5</span>
         <span onClick={() => display("6")}>6</span>
-        <span className="plus" onClick={() => display("+")}>+</span>
+        <span className="plus" onClick={() => display("+")}>
+          +
+        </span>
 
         <span onClick={() => display("1")}>1</span>
         <span onClick={() => display("2")}>2</span>
@@ -37,7 +42,9 @@ const Add = () => {
         <span onClick={() => display("0")}>0</span>
         <span onClick={() => display("00")}>00</span>
         <span onClick={() => display(".")}>.</span>
-        <span className="num equal" onClick={() => calculate()}>=</span>
+        <span className="num equal" onClick={() => calculate()}>
+          =
+        </span>
       </form>
     </div>
   );
